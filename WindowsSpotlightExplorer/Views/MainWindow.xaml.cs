@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindowsSpotlightExplorer.ViewModels;
 
-namespace WindowsSpotlightExplorer
+namespace WindowsSpotlightExplorer.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +24,8 @@ namespace WindowsSpotlightExplorer
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
+
     }
 }

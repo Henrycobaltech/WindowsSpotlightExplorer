@@ -1,0 +1,44 @@
+﻿<Window x:Class="WindowsSpotlightExplorer.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:WindowsSpotlightExplorer.ViewModels"
+        mc:Ignorable="d"
+        Title="Windows Spotlight Explorer" Height="720" Width="1280"
+        d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel}"
+        x:Name="mainWindow">
+    <Grid>
+        <ListBox ItemsSource="{Binding Images}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="Gray">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding Source}" MaxHeight="100" MinWidth="177.78" Margin="10"/>
+                            <StackPanel Grid.Column="1" Margin="10">
+                                <TextBlock Margin="10">
+                                    <Run>Size: </Run>
+                                    <Run Text="{Binding Width}"/>
+                                    <Run Text="×"/>
+                                    <Run Text="{Binding Height}"/>
+                                </TextBlock>
+                                <TextBlock Margin="10" Text="{Binding SizeInKb,StringFormat=FileSize: \{0\}KB}"/>
+                                <Button Content="Save as..." Command="{Binding Path=DataContext.SaveAsCommand, ElementName=mainWindow}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
