@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsSpotlightExplorer", "WindowsSpotlightExplorer\WindowsSpotlightExplorer.csproj", "{0275DF73-5746-4257-8F18-3148C53FF598}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BDAF4A2A-4CC2-4951-94DB-622C335CD5E6}"
+	ProjectSection(SolutionItems) = preProject
+		screenshot.png = screenshot.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
